@@ -3,240 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Graduation Ceremony Invitation</title>
+  <title>Graduation Ceremony</title>
 
-  <style>
-    :root {
-      --gold: #d4af37;
-      --dark: #0b0b0f;
-      --light: #f5f5f5;
-    }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", system-ui, sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top, #1a1a2e, #000),
-        linear-gradient(135deg, #000, #111);
-      color: var(--light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .card {
-      max-width: 720px;
-      width: 100%;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 48px 36px;
-      box-shadow: 0 40px 120px rgba(0,0,0,0.6);
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 18px;
-      border-radius: 999px;
-      background: rgba(212,175,55,0.15);
-      color: var(--gold);
-      letter-spacing: 1px;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: #ccc;
-      margin-bottom: 30px;
-    }
-
-    .divider {
-      height: 1px;
-      width: 80px;
-      background: var(--gold);
-      margin: 28px auto;
-    }
-
-    .info {
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    .amharic {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-top: 8px;
-    }
-
-    /* COUNTDOWN */
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin: 36px 0;
-    }
-
-    .time-box {
-      background: rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 18px 10px;
-    }
-
-    .time-box span {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    .time-box small {
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      opacity: 0.7;
-    }
-
-    /* LOCATION BUTTON */
-    .location-btn {
-      display: inline-block;
-      margin: 40px auto 30px;
-      padding: 18px 40px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #000;
-      background: linear-gradient(135deg, #ffd700, #d4af37);
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow:
-        0 0 20px rgba(212,175,55,0.8),
-        0 0 60px rgba(212,175,55,0.6);
-      animation: glow 2s infinite ease-in-out;
-    }
-
-    @keyframes glow {
-      0% { box-shadow: 0 0 20px rgba(212,175,55,0.6); }
-      50% { box-shadow: 0 0 50px rgba(212,175,55,1); }
-      100% { box-shadow: 0 0 20px rgba(212,175,55,0.6); }
-    }
-
-    .venue {
-      font-size: 0.95rem;
-      opacity: 0.85;
-    }
-
-    footer {
-      margin-top: 36px;
-      font-style: italic;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 600px) {
-      .countdown {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="card">
 
-    <div class="badge">GRADUATION CEREMONY</div>
+  <div class="overlay"></div>
 
-    <h3>You’re Invited</h3>
-    <h2>Celebrating a Milestone</h2>
+  <main class="container">
 
-    <div class="divider"></div>
-
-    <div class="info">
-      <strong>Date:</strong> February 14, 2026  
-      <div class="amharic">📅 ቀን፡ ጥር 7 (የኢትዮጵያ ዘመን)</div>
-    </div>
-
-    <div class="info">
-      <strong>Time:</strong> 2:00 PM (European Time)  
-      <div class="amharic">⏰ 8:00 የኢትዮጵያ ሰዓት (ከቀትር በኋላ)</div>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Graduation Ceremony</h1>
+      <p class="subtitle">A Celebration of Achievement & New Beginnings</p>
+    </section>
 
     <!-- COUNTDOWN -->
-    <div class="countdown" id="countdown">
+    <section class="countdown">
       <div class="time-box">
         <span id="days">0</span>
-        <small>DAYS</small>
+        <small>Days</small>
       </div>
       <div class="time-box">
         <span id="hours">0</span>
-        <small>HOURS</small>
+        <small>Hours</small>
       </div>
       <div class="time-box">
         <span id="minutes">0</span>
-        <small>MINUTES</small>
+        <small>Minutes</small>
       </div>
       <div class="time-box">
         <span id="seconds">0</span>
-        <small>SECONDS</small>
+        <small>Seconds</small>
       </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DETAILS -->
+    <section class="details">
+
+      <div class="card">
+        <h2>📅 Date</h2>
+        <p>February 14, 2026</p>
+        <p class="am">የካቲት 7, 2018 ዓ.ም</p>
+      </div>
+
+      <div class="card">
+        <h2>⏰ Time</h2>
+        <p>2:00 PM (International)</p>
+        <p class="am">8:00 የአካባቢ ሰዓት</p>
+      </div>
+
+      <div class="card">
+        <h2>📍 Venue</h2>
+        <p>Garment Terrace</p>
+        <p class="am">ጋርመንት ቴራስ</p>
+      </div>
+
+    </section>
+
+    <!-- LOCATION CTA -->
+    <div class="map">
+      <a href="https://maps.app.goo.gl/9mAUUYnarUje34ve9"
+         target="_blank"
+         class="location-btn">
+        📍 CLICK TO VIEW LOCATION
+        <span>ካርታ ላይ ይመልከቱ</span>
+      </a>
     </div>
 
-    <!-- LOCATION -->
-    <a
-      class="location-btn"
-      href="https://maps.app.goo.gl/9mAUUYnarUje34ve9"
-      target="_blank"
-    >
-      📍 VIEW LOCATION
-    </a>
+    <!-- NOTE -->
+    <section class="note">
+      <p>
+        We warmly invite you to join us in celebrating the completion of an important academic journey
+        and the beginning of a new chapter.
+      </p>
+      <p class="am">
+        የትምህርት ጉዞ መጨረሻን እና አዲስ ጉዞ መጀመሪያን ለመከበር እንጋብዛችኋለን።
+      </p>
+    </section>
 
-    <div class="venue">
-      Garment Terrace
-      <div class="amharic">📍 ጋርመንት ቴራስ</div>
-    </div>
+    <!-- CLOSING -->
+    <section class="closing">
+      <p>
+        This night marks the end of one chapter — and the confidence to begin the next.
+      </p>
+    </section>
 
-    <footer>
-      “This night marks the end of one chapter — and the confidence to begin the next.”
-    </footer>
+    <footer>🎓</footer>
 
-  </div>
+  </main>
 
-  <script>
-    // Countdown target: Feb 14, 2026, 14:00 (Europe time)
-    const targetDate = new Date("2026-02-14T14:00:00").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = targetDate - now;
-
-      if (diff <= 0) return;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
