@@ -1,3 +1,5 @@
+console.log("Countdown script is loaded");
+
 window.addEventListener("DOMContentLoaded", () => {
   const eventDate = new Date("2026-02-14T14:00:00+03:00").getTime();
 
