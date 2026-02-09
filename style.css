@@ -43,6 +43,34 @@ body {
   font-weight: 300;
 }
 
+/* COUNTDOWN */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  text-align: center;
+  min-width: 70px;
+}
+
+.time-box span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #d4af37;
+}
+
+.time-box small {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
 .divider {
   height: 2px;
   background: linear-gradient(90deg, transparent, #d4af37, transparent);
@@ -81,15 +109,55 @@ body {
   opacity: 0.85;
 }
 
+/* LOCATION BUTTON – STRONG CTA */
 .map {
   text-align: center;
-  margin: 2.5rem 0;
+  margin: 3rem 0;
 }
 
-.map a {
-  color: #d4af37;
+.location-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  padding: 1.2rem 2.6rem;
+  border-radius: 60px;
+
+  background: linear-gradient(135deg, #ffd369, #d4af37);
+  color: #000;
+  font-weight: 700;
+  letter-spacing: 1px;
   text-decoration: none;
+
+  box-shadow:
+    0 0 15px rgba(212,175,55,0.6),
+    0 0 40px rgba(212,175,55,0.4);
+
+  animation: pulse 2.5s infinite;
+  transition: transform 0.25s ease;
+}
+
+.location-btn span {
+  font-size: 0.8rem;
   font-weight: 500;
+  opacity: 0.85;
+}
+
+.location-btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(212,175,55,0.6);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(212,175,55,0.9);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(212,175,55,0.6);
+  }
 }
 
 .note {
