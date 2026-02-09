@@ -28,4 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+  if (diff <= 0) {
+  document.querySelector(".countdown").innerHTML = "🎉 The event has started!";
+  clearInterval(timer);
+  return;
+}
+
 });
