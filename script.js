@@ -8,6 +8,22 @@ window.addEventListener("DOMContentLoaded", () => {
     const diff = eventDate - now;
 
     if (diff <= 0) {
+  document.querySelector(".countdown").innerHTML = "🎉 The event has started!";
+  clearInterval(timer);
+
+  if (Notification.permission === "granted") {
+    new Notification("The event has started!");
+  } else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        new Notification("The event has started!");
+      }
+    });
+  }
+
+  return;
+}
+ {
       document.getElementById("days").textContent = 0;
       document.getElementById("hours").textContent = 0;
       document.getElementById("minutes").textContent = 0;
@@ -28,10 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
-  if (diff <= 0) {
-  document.querySelector(".countdown").innerHTML = "🎉 The event has started!";
-  clearInterval(timer);
-  return;
+  
 }
 
 });
