@@ -111,3 +111,30 @@ footer {
   margin-top: 3rem;
   opacity: 0.6;
 }
+.location-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
+  transition: all 0.3s ease;
+}
+
+.location-btn span {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.location-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(212, 175, 55, 0.55);
+}
